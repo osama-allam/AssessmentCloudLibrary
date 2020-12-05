@@ -7,9 +7,9 @@ namespace CloudLibrary.Data.Common.Persistence.Entities
     {
         public Infrastructure()
         {
-            Resources = new HashSet<IResource>();
+            Resources = new HashSet<IResource<string>>();
         }
-        public virtual ICollection<IResource> Resources { get; set; }
+        public virtual ICollection<IResource<string>> Resources { get; set; }
 
     }
 }

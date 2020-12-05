@@ -3,7 +3,7 @@ using CloudLibrary.Data.Common.Persistence.Enum;
 
 namespace CloudLibrary.Data.Common.Contracts.Entities
 {
-    public interface IResource : IAuditEntity
+    public interface IResource<T> : IAuditEntity<T> where T : class
     {
         string Name { get; set; }
         string Location { get; set; }

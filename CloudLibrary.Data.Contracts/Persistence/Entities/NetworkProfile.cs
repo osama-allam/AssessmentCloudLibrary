@@ -1,6 +1,6 @@
 ﻿namespace CloudLibrary.Data.Common.Persistence.Entities
 {
-    public class NetworkProfile : AuditEntity<int>
+    public class NetworkProfile : AuditEntity<string>
     {
         public string PrivateIp { get; set; }
         public string PublicIp { get; set; }
