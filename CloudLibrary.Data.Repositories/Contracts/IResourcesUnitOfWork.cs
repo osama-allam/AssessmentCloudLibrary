@@ -4,7 +4,7 @@ namespace CloudLibrary.Data.Core.Repositories.Contracts
 {
     public interface IResourcesUnitOfWork : IUnitOfWorkBase
     {
-        IDatabaseServerRepository DatabaseServerRepository { get; }
-        IVirtualMachineRepository VirtualMachineRepository { get; }
+        IDatabaseServerRepository DatabaseServers { get; }
+        IVirtualMachineRepository VirtualMachines { get; }
     }
 }

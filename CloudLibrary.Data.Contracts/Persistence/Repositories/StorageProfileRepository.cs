@@ -5,6 +5,9 @@ namespace CloudLibrary.Data.Common.Persistence.Repositories
 {
     public class StorageProfileRepository : Repository<StorageProfile>, IStorageProfileRepository
     {
-        
+        public StorageProfileRepository(string root) : base(root)
+        {
+        }
+        public string Root => _root;
     }
 }

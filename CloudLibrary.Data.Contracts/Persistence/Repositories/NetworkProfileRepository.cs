@@ -5,6 +5,9 @@ namespace CloudLibrary.Data.Common.Persistence.Repositories
 {
     public class NetworkProfileRepository : Repository<NetworkProfile>, INetworkProfileRepository
     {
-        
+        public NetworkProfileRepository(string root) : base(root)
+        {
+        }
+        public string Root => _root;
     }
 }

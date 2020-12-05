@@ -1,27 +1,31 @@
-﻿using System.Threading.Tasks;
+﻿using System.IO;
+using System.Threading.Tasks;
 using CloudLibrary.Data.Common.Contracts;
 using CloudLibrary.Data.Common.Contracts.Repositories;
+using CloudLibrary.Data.Common.Persistence.Repositories;
 
 namespace CloudLibrary.Data.Common.Persistence
 {
     public class UnitOfWorkBase : IUnitOfWorkBase
     {
-        public ICloudProviderRepository CloudProviderRepository { get; }
-        public IHardwareProfileRepository HardwareProfileRepository { get; }
-        public INetworkProfileRepository NetworkProfileRepository { get; }
-        public IOsProfileRepository OsProfileRepository { get; }
-        public IResourceRepository ResourceRepository { get; }
-        public IStorageProfileRepository StorageProfileRepository { get; }
-        public IInfrastructureRepository InfrastructureRepository { get; }
-
-        public int Complete()
+        protected readonly string _root;
+        public UnitOfWorkBase(string root)
         {
-            throw new System.NotImplementedException();
+            _root = root;
+            CloudProviders = new CloudProviderRepository(_root);
+            HardwareProfiles = new HardwareProfileRepository(_root);
+            NetworkProfiles = new NetworkProfileRepository(_root);
+            OsProfiles = new OsProfileRepository(_root);
+            Resources = new ResourceRepository(_root);
+            StorageProfiles = new StorageProfileRepository(_root);
+            Infrastructures = new InfrastructureRepository(_root);
         }
-
-        public async Task<int> CompleteAsync()
-        {
-            throw new System.NotImplementedException();
-        }
+        public ICloudProviderRepository CloudProviders { get; }
+        public IHardwareProfileRepository HardwareProfiles { get; }
+        public INetworkProfileRepository NetworkProfiles { get; }
+        public IOsProfileRepository OsProfiles { get; }
+        public IResourceRepository Resources { get; }
+        public IStorageProfileRepository StorageProfiles { get; }
+        public IInfrastructureRepository Infrastructures { get; }
     }
 }

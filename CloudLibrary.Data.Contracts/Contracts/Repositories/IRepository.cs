@@ -17,8 +17,5 @@ namespace CloudLibrary.Data.Common.Contracts.Repositories
         void RemoveRange(IEnumerable<TEntity> entities);
         long Count();
         long Count(Expression<Func<TEntity, bool>> predicate);
-        IEnumerable<TEntity> Top(int count);
-        IEnumerable<TEntity> Top(int count, Expression<Func<TEntity, bool>> predicate);
-        IEnumerable<TEntity> ToList();
     }
 }

@@ -5,6 +5,9 @@ namespace CloudLibrary.Data.Common.Persistence.Repositories
 {
     public class ResourceRepository : Repository<Resource<int>>, IResourceRepository 
     {
-        
+        public ResourceRepository(string root) : base(root)
+        {
+        }
+        public string Root => _root;
     }
 }

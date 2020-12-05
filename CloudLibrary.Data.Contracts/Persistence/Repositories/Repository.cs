@@ -7,6 +7,11 @@ namespace CloudLibrary.Data.Common.Persistence.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
+        protected readonly string _root;
+        public Repository(string root)
+        {
+            _root = root;
+        }
         public TEntity Get(object id)
         {
             throw new NotImplementedException();
@@ -53,21 +58,6 @@ namespace CloudLibrary.Data.Common.Persistence.Repositories
         }
 
         public long Count(Expression<Func<TEntity, bool>> predicate)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<TEntity> Top(int count)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<TEntity> Top(int count, Expression<Func<TEntity, bool>> predicate)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<TEntity> ToList()
         {
             throw new NotImplementedException();
         }

@@ -5,6 +5,9 @@ namespace CloudLibrary.Data.Common.Persistence.Repositories
 {
     public class HardwareProfileRepository : Repository<HardwareProfile>, IHardwareProfileRepository
     {
-        
+        public HardwareProfileRepository(string root) : base(root)
+        {
+        }
+        public string Root => _root;
     }
 }
