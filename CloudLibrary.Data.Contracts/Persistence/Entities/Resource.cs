@@ -5,7 +5,7 @@ namespace CloudLibrary.Data.Common.Persistence.Entities
 {
     public abstract class Resource<T> : AuditEntity<T> where T : struct
     {
-        public virtual ResourceType Type => ResourceType.Undefined;
+        public abstract ResourceType Type { get; }
         public string Name { get; set; }
         public string Location { get; set; }
         public int InfrastructureId { get; set; }
