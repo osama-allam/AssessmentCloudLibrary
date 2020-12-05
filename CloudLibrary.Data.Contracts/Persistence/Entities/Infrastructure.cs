@@ -3,14 +3,15 @@ using CloudLibrary.Data.Common.Contracts.Entities;
 
 namespace CloudLibrary.Data.Common.Persistence.Entities
 {
-    public class CloudProvider : AuditEntity<int>, ICloudProvider
+    public class Infrastructure : AuditEntity<int>  
     {
-        public CloudProvider()
+        public Infrastructure()
         {
-            Infrastructures = new HashSet<Infrastructure>();
+            Resources = new HashSet<IResource>();
         }
         public string Name { get; set; }
         public string Location { get; set; }
-        public virtual ICollection<Infrastructure> Infrastructures { get; set; }
+        public virtual ICollection<IResource> Resources { get; set; }
+
     }
 }
