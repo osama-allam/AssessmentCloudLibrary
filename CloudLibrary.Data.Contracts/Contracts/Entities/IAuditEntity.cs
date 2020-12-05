@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CloudLibrary.Data.Common.Contracts
+namespace CloudLibrary.Data.Common.Contracts.Entities
 {
     public interface IAuditEntity
     {

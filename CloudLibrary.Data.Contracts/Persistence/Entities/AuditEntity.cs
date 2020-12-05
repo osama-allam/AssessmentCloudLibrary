@@ -1,7 +1,7 @@
 ﻿using System;
-using CloudLibrary.Data.Common.Contracts;
+using CloudLibrary.Data.Common.Contracts.Entities;
 
-namespace CloudLibrary.Data.Common.Core
+namespace CloudLibrary.Data.Common.Persistence.Entities
 {
     public class AuditEntity<T> : Entity<T>, IAuditEntity where T : struct
     {

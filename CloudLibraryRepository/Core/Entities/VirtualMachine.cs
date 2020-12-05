@@ -1,8 +1,7 @@
-﻿using CloudLibrary.Data.Common.Contracts;
-using CloudLibrary.Data.Common.Core;
-using CloudLibrary.Data.Common.Enum;
+﻿using CloudLibrary.Data.Common.Persistence.Entities;
+using CloudLibrary.Data.Common.Persistence.Enum;
 
-namespace CloudLibrary.Data.Entities.Core.Entities
+namespace CloudLibrary.Data.Core.Entities.Core.Entities
 {
     public class VirtualMachine : Resource<int>
     {

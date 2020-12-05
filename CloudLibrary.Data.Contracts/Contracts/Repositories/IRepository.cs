@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace CloudLibrary.Data.Common
+namespace CloudLibrary.Data.Common.Contracts.Repositories
 {
     public interface IRepository<TEntity> where TEntity : class
     {

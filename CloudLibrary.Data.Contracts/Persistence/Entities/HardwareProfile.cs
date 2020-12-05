@@ -1,4 +1,4 @@
-﻿namespace CloudLibrary.Data.Common.Core
+﻿namespace CloudLibrary.Data.Common.Persistence.Entities
 {
     public class HardwareProfile : AuditEntity<int>
     {

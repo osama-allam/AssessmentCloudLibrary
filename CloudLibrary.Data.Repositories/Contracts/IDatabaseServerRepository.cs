@@ -1,0 +1,10 @@
+﻿using CloudLibrary.Data.Common.Contracts.Repositories;
+using CloudLibrary.Data.Core.Entities.Core.Entities;
+
+namespace CloudLibrary.Data.Core.Repositories.Contracts
+{
+    public interface IDatabaseServerRepository : IRepository<DatabaseServer>
+    {
+        
+    }
+}

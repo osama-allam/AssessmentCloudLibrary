@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CloudLibraryRepository\CloudLibrary.Data.Entities.csproj" />
+    <ProjectReference Include="..\CloudLibraryRepository\CloudLibrary.Data.Core.Entities.csproj" />
   </ItemGroup>
 
 </Project>

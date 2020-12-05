@@ -1,4 +1,4 @@
-﻿namespace CloudLibrary.Data.Common.Enum
+﻿namespace CloudLibrary.Data.Common.Persistence.Enum
 {
     public enum DbType
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using CloudLibrary.Data.Common.Enum;
+using CloudLibrary.Data.Common.Persistence.Enum;
 
-namespace CloudLibrary.Data.Common.Core
+namespace CloudLibrary.Data.Common.Persistence.Entities
 {
     public class OsProfile : AuditEntity<int>
     {

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace CloudLibrary.Data.Common.Core
+namespace CloudLibrary.Data.Common.Persistence.Entities
 {
     public class Entity<T> where T : struct
     {
