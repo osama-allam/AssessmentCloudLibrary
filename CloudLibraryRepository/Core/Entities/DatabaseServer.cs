@@ -10,5 +10,7 @@ namespace CloudLibrary.Data.Core.Entities.Core.Entities
         public ResourceType Type => ResourceType.Database;
         public DbType DbType { get; set; }
         public string Version { get; set; }
+        public int DatabaseServerPropertiesId { get; set; }
+        public DatabaseServerProperties DatabaseServerProperties { get; set; }
     }
 }

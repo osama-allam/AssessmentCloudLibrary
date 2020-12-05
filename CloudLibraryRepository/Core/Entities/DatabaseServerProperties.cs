@@ -9,5 +9,7 @@ namespace CloudLibrary.Data.Core.Entities.Core.Entities
         public string ServerName { get; set; }
         public string FileName { get; set; }
         public int FileGrowth { get; set; }
+        public int DatabaseServerId { get; set; }
+        public DatabaseServer DatabaseServer { get; set; }
     }
 }
