@@ -1,16 +1,14 @@
-﻿using CloudLibrary.Data.Common.Persistence.Entities;
+﻿using System.Collections.Generic;
+using CloudLibrary.Data.Common.Persistence.Entities;
 using CloudLibrary.Data.Common.Persistence.Enum;
 
 namespace CloudLibrary.Data.Core.Entities.Core.Entities
 {
     public class DatabaseServer : Resource<int>
     {
-        public string Name { get; set; }
-        public string Location { get; set; }
         public ResourceType Type => ResourceType.Database;
         public DbType DbType { get; set; }
         public string Version { get; set; }
-        public int DatabaseServerPropertiesId { get; set; }
-        public DatabaseServerProperties DatabaseServerProperties { get; set; }
+        public Dictionary<string, string> AdditionalConfigurations { get; set; }
     }
 }

@@ -5,10 +5,6 @@ namespace CloudLibrary.Data.Common.Persistence.Entities
 {
     public abstract class Resource<T> : AuditEntity<T> where T : struct
     {
-        public DateTime DateCreated { get; set; }
-        public DateTime DateModified { get; set; }
-        public string CreatedBy { get; set; }
-        public string ModifiedBy { get; set; }
         public string Name { get; set; }
         public string Location { get; set; }
         public ResourceType Type { get; }
