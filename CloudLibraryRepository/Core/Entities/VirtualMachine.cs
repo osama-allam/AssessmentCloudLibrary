@@ -6,8 +6,8 @@ namespace CloudLibrary.Data.Core.Entities.Core.Entities
 {
     public class VirtualMachine : Resource<int>
     {
+        public override ResourceType Type => ResourceType.VirtualMachine;
         public string VmId { get; set; }
-        public ResourceType Type => ResourceType.VirtualMachine;
         public Dictionary<string, string> AdditionalConfigurations { get; set; }
     }
 }

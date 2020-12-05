@@ -6,7 +6,7 @@ namespace CloudLibrary.Data.Core.Entities.Core.Entities
 {
     public class DatabaseServer : Resource<int>
     {
-        public ResourceType Type => ResourceType.Database;
+        public override ResourceType Type => ResourceType.Database;
         public DbType DbType { get; set; }
         public string Version { get; set; }
         public Dictionary<string, string> AdditionalConfigurations { get; set; }
