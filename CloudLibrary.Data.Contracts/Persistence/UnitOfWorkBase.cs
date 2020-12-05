@@ -12,6 +12,7 @@ namespace CloudLibrary.Data.Common.Persistence
         public IOsProfileRepository OsProfileRepository { get; }
         public IResourceRepository ResourceRepository { get; }
         public IStorageProfileRepository StorageProfileRepository { get; }
+        public IInfrastructureRepository InfrastructureRepository { get; }
 
         public int Complete()
         {

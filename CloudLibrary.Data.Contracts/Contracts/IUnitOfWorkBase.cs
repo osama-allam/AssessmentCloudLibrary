@@ -12,6 +12,7 @@ namespace CloudLibrary.Data.Common.Contracts
         IOsProfileRepository OsProfileRepository { get; }
         IResourceRepository ResourceRepository { get; }
         IStorageProfileRepository StorageProfileRepository { get; }
+        IInfrastructureRepository InfrastructureRepository { get; }
         int Complete();
         Task<int> CompleteAsync();
     }
