@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudLibrary.Data.Core.Repo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudLibrary.Data.Common", "CloudLibrary.Data.Contracts\CloudLibrary.Data.Common.csproj", "{F8AFA848-B4B2-4FBF-823C-4CF78FF1C1CD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudLibrary.Data.Model", "CloudLibrary.Data.Model\CloudLibrary.Data.Model.csproj", "{D67C842F-A9CD-483B-9119-9DB129B7D5E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudLibrary.Data.Services", "CloudLibrary.Data.Model\CloudLibrary.Data.Services.csproj", "{D67C842F-A9CD-483B-9119-9DB129B7D5E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
