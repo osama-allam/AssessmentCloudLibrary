@@ -2,7 +2,7 @@
 
 namespace CloudLibrary.Data.Common.Contracts.Repositories
 {
-    public interface IResourceRepository : IRepository<Resource<int>>
+    public interface IResourceRepository : IRepository<Resource<string>>
     {
         
     }

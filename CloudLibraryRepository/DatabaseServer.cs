@@ -4,7 +4,7 @@ using CloudLibrary.Data.Common.Persistence.Enum;
 
 namespace CloudLibrary.Data.Core.Entities
 {
-    public class DatabaseServer : Resource<int>
+    public class DatabaseServer : Resource<string>
     {
         public override ResourceType Type => ResourceType.Database;
         public DbType DbType { get; set; }

@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CloudLibrary.Core.Services.Contracts;
+using CloudLibrary.Core.Services.Requests;
 using CloudLibrary.Data.Common.Persistence.Entities;
-using CloudLibrary.Data.Core.Repositories.Contracts;
-using CloudLibrary.Frontend.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
@@ -23,20 +22,14 @@ namespace CloudLibrary.Frontend.Controllers
         {
             _cloudProviderService = cloudProviderService;
         }
-        
-        //[ProducesResponseType(StatusCodes.Status406NotAcceptable)]
-        //[ProducesResponseType(StatusCodes.Status201Created, Type = typeof(CloudProvider))]
-        //[HttpPost]
-        //public IActionResult Create(CloudProviderModel request)
-        //{
-        //    if (request == null)
-        //    {
-        //        return BadRequest();
-        //    }
-        //    if (ModelState.IsValid)
-        //    {
 
-        //    }
-        //}
+        [ProducesResponseType(StatusCodes.Status406NotAcceptable)]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CloudProvider))]
+        [HttpPost("Create")]
+        public IActionResult Create(CreateCloudProviderRequest request)
+        {
+            var createdCloudProvider = _cloudProviderService.CreateCloudProvider(request);
+            return Ok(createdCloudProvider);
+        }
     }
 }

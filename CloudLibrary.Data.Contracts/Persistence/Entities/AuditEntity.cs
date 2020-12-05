@@ -3,7 +3,7 @@ using CloudLibrary.Data.Common.Contracts.Entities;
 
 namespace CloudLibrary.Data.Common.Persistence.Entities
 {
-    public class AuditEntity<T> : Entity<T>, IAuditEntity where T : struct
+    public class AuditEntity<T> : Entity<T>, IAuditEntity<T> where T : class
     {
         public AuditEntity()
         {

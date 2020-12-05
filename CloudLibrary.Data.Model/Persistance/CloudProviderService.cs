@@ -22,8 +22,7 @@ namespace CloudLibrary.Core.Services.Persistance
                 Name = request.Name,
                 Location = request.Location
             };
-            _unitOfWorkBase.CloudProviders.Add(cloudProvider);
-            return cloudProvider;
+            return _unitOfWorkBase.CloudProviders.Add(cloudProvider);
         }
         public void DeleteCloudProvider(string name)
         {

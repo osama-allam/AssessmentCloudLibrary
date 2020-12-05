@@ -1,13 +1,16 @@
-﻿using Newtonsoft.Json;
+﻿using CloudLibrary.Data.Common.Contracts.Entities;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace CloudLibrary.Data.Common.Persistence.Entities
 {
-    public class Entity<T> where T : struct
+    public class Entity<T>
     {
         public virtual T Id { get; set; }
+
         public string ToJson()
         {
-            return JsonConvert.SerializeObject(this);
+            return JsonConvert.SerializeObject(this, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() } );
         }
     }
 

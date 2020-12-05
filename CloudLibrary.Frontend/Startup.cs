@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using CloudLibrary.Core.Services.Contracts;
+using CloudLibrary.Core.Services.Persistance;
 using CloudLibrary.Data.Common.Contracts;
 using CloudLibrary.Data.Common.Persistence;
 using CloudLibrary.Data.Core.Repositories.Contracts;
@@ -55,6 +57,9 @@ namespace CloudLibrary.Frontend
             
             services.AddScoped<IUnitOfWorkBase>(x => new UnitOfWorkBase(BaseDirectory.GetProvidersPath()));
             services.AddScoped<IResourcesUnitOfWork>(x => new ResourcesUnitOfWork(BaseDirectory.GetProvidersPath()));
+            services.AddScoped<ICloudProviderService, CloudProviderService>();
+            services.AddScoped<IInfrastructureService, InfrastructureService>();
+            services.AddScoped<IResourceService, ResourceService>();
             //registering Swagger for documentation
             services.AddSwaggerGen(setupAction =>
             {

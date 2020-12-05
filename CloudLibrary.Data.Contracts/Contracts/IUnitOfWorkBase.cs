@@ -7,11 +7,7 @@ namespace CloudLibrary.Data.Common.Contracts
     {
         
         ICloudProviderRepository CloudProviders { get; }
-        IHardwareProfileRepository HardwareProfiles { get; }
-        INetworkProfileRepository NetworkProfiles { get; }
-        IOsProfileRepository OsProfiles { get; }
         IResourceRepository Resources { get; }
-        IStorageProfileRepository StorageProfiles { get; }
         IInfrastructureRepository Infrastructures { get; }
     }
 }

@@ -6,8 +6,8 @@ namespace CloudLibrary.Frontend
     {
         private static DirectoryInfo EnsureRootFolderCreated()
         {
-            DirectoryInfo directoryInfo = null;
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot\Providers");
+            DirectoryInfo directoryInfo = new DirectoryInfo(filePath);
             if (!Directory.Exists(filePath))
             {
                 directoryInfo = Directory.CreateDirectory(filePath);
