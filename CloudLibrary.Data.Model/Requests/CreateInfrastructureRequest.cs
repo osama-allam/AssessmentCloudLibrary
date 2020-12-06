@@ -2,7 +2,7 @@
 
 namespace CloudLibrary.Core.Services.Requests
 {
-    public class CreateCloudProviderRequest
+    public class CreateInfrastructureRequest
     {
         [Required]
         public string Name { get; set; }

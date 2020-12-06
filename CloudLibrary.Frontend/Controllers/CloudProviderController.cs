@@ -39,17 +39,16 @@ namespace CloudLibrary.Frontend.Controllers
         {
             if (ModelState.IsValid)
             {
-                var createdCloudProvider = _cloudProviderService.CreateCloudProvider(request);
-                return Ok(createdCloudProvider);
+                var createdCloudProviderResponse = _cloudProviderService.CreateCloudProvider(request);
+                return Ok(createdCloudProviderResponse);
             }
-
             return BadRequest();
         }
         /// <summary>
         /// Delete Cloud Provider
         /// </summary>
         /// <param name="name"></param>
-        /// <response code="200">(Success) Returns a the created Cloud Provider json</response>
+        /// <response code="200">(Success) Returns after successful deletion</response>
         /// <response code="400">(BadRequest) In case of incorrect request parameters</response>
         /// <response code="406">(Not Acceptable) In case of using setting response other than JSON or XML</response>
         /// <returns></returns>

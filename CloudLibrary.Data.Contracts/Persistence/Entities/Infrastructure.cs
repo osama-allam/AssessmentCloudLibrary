@@ -11,7 +11,10 @@ namespace CloudLibrary.Data.Common.Persistence.Entities
             Resources = new HashSet<IResource<string>>();
         }
         [JsonIgnore]
+        public string CloudProviderId { get; set; }
+        [JsonIgnore]
         public virtual ICollection<IResource<string>> Resources { get; set; }
+        public CloudProvider CloudProvider { get; set; }
 
     }
 }

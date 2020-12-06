@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using CloudLibrary.Core.Services.Contracts;
-using CloudLibrary.Core.Services.Persistance;
+using CloudLibrary.Core.Services.Persistence;
 using CloudLibrary.Data.Common.Contracts;
 using CloudLibrary.Data.Common.Persistence;
 using CloudLibrary.Data.Core.Repositories.Contracts;

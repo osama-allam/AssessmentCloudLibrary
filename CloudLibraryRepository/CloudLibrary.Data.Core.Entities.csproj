@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Persistence\Validators\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CloudLibrary.Data.Contracts\CloudLibrary.Data.Common.csproj" />
   </ItemGroup>
 

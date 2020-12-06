@@ -42,8 +42,7 @@ namespace CloudLibrary.Data.Common.Persistence.Repositories
         public TEntity Add(TEntity entity)
         {
             entity.Id = Guid.NewGuid().ToString();
-            var directoryPath = Path.Combine(_root, entity.Name);
-            entity.Address = directoryPath;
+            var directoryPath = Path.Combine(_root, entity.Address);
             if (!Directory.Exists(directoryPath))
             {  
                 Directory.CreateDirectory(directoryPath);
@@ -55,10 +54,11 @@ namespace CloudLibrary.Data.Common.Persistence.Repositories
 
         public void Remove(TEntity entity)
         {
-            if (Directory.Exists(entity.Address))
+            var directoryPath = Path.Combine(_root, entity.Address);
+            if (Directory.Exists(directoryPath))
             {
                 // the true parameter here is to make recursive delete for that directory as requested in requirements
-                Directory.Delete(entity.Address, true);
+                Directory.Delete(directoryPath, true);
             }  
         }
     }

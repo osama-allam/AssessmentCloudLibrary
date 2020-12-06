@@ -1,11 +1,11 @@
 ﻿using System.Linq;
-using System.Threading.Tasks;
 using CloudLibrary.Core.Services.Contracts;
 using CloudLibrary.Core.Services.Requests;
+using CloudLibrary.Core.Services.Responses;
 using CloudLibrary.Data.Common.Contracts;
 using CloudLibrary.Data.Common.Persistence.Entities;
 
-namespace CloudLibrary.Core.Services.Persistance
+namespace CloudLibrary.Core.Services.Persistence
 {
     public class CloudProviderService : ICloudProviderService
     {
@@ -15,14 +15,23 @@ namespace CloudLibrary.Core.Services.Persistance
         {
             _unitOfWorkBase = unitOfWorkBase;
         }
-        public CloudProvider CreateCloudProvider(CreateCloudProviderRequest request)
+        public CreateCloudProviderResponse CreateCloudProvider(CreateCloudProviderRequest request)
         {
+            
+            var response = new CreateCloudProviderResponse{OperationStatus = OperationStatus.Success};
+            if (_unitOfWorkBase.CloudProviders.Find(request.Name).Any())
+            {
+                response.CloudProvider = _unitOfWorkBase.CloudProviders.Get(request.Name);
+                response.Description = $"Cloud Provider {request.Name} already exists";
+            }
             var cloudProvider = new CloudProvider
             {
                 Name = request.Name,
+                Address = request.Name,
                 Location = request.Location
             };
-            return _unitOfWorkBase.CloudProviders.Add(cloudProvider);
+            response.CloudProvider = _unitOfWorkBase.CloudProviders.Add(cloudProvider);
+            return response;
         }
         public void DeleteCloudProvider(string name)
         {
