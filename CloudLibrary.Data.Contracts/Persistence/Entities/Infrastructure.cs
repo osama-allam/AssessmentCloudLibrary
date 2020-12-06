@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using CloudLibrary.Data.Common.Contracts.Entities;
+using Newtonsoft.Json;
 
 namespace CloudLibrary.Data.Common.Persistence.Entities
 {
@@ -9,6 +10,7 @@ namespace CloudLibrary.Data.Common.Persistence.Entities
         {
             Resources = new HashSet<IResource<string>>();
         }
+        [JsonIgnore]
         public virtual ICollection<IResource<string>> Resources { get; set; }
 
     }

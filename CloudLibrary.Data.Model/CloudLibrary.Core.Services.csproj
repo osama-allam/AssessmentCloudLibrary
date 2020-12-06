@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CloudLibrary.Data.Repositories\CloudLibrary.Data.Core.Repositories.csproj" />
   </ItemGroup>
 

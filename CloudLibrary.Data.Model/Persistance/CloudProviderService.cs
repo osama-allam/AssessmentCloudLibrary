@@ -26,9 +26,9 @@ namespace CloudLibrary.Core.Services.Persistance
         }
         public void DeleteCloudProvider(string name)
         {
-            if(_unitOfWorkBase.CloudProviders.Find(cp => cp.Name == name).Any())
+            var cloudProvider = _unitOfWorkBase.CloudProviders.Get(name);
+            if(cloudProvider != null)
             {
-                var cloudProvider = _unitOfWorkBase.CloudProviders.Get(name);
                 _unitOfWorkBase.CloudProviders.Remove(cloudProvider);
             }
         }

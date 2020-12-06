@@ -4,5 +4,25 @@
         <name>CloudLibrary.Frontend</name>
     </assembly>
     <members>
+        <member name="M:CloudLibrary.Frontend.Controllers.CloudProviderController.Create(CloudLibrary.Core.Services.Requests.CreateCloudProviderRequest)">
+            <summary>
+            Create new Cloud Provider
+            </summary>
+            <param name="request"></param>
+            <response code="200">(Success) Returns a the created Cloud Provider json</response>
+            <response code="400">(BadRequest) In case of incorrect request parameters</response>
+            <response code="406">(Not Acceptable) In case of using setting response other than JSON or XML</response>
+            <returns></returns>
+        </member>
+        <member name="M:CloudLibrary.Frontend.Controllers.CloudProviderController.Delete(System.String)">
+            <summary>
+            Delete Cloud Provider
+            </summary>
+            <param name="name"></param>
+            <response code="200">(Success) Returns a the created Cloud Provider json</response>
+            <response code="400">(BadRequest) In case of incorrect request parameters</response>
+            <response code="406">(Not Acceptable) In case of using setting response other than JSON or XML</response>
+            <returns></returns>
+        </member>
     </members>
 </doc>

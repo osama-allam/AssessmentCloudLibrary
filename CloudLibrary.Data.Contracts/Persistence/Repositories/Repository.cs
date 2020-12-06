@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Linq.Expressions;
 using CloudLibrary.Data.Common.Contracts.Entities;
 using CloudLibrary.Data.Common.Contracts.Repositories;
 using CloudLibrary.Data.Common.Persistence.Entities;
+using Newtonsoft.Json;
 
 namespace CloudLibrary.Data.Common.Persistence.Repositories
 {
@@ -16,34 +18,47 @@ namespace CloudLibrary.Data.Common.Persistence.Repositories
             _root = root;
         }
 
-        public TEntity Get(object id)
+        public TEntity Get(object name)
         {
-            throw new NotImplementedException();
+            return Find(name.ToString()).FirstOrDefault();
         }
 
-        public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
+        public IEnumerable<TEntity> Find(string address)
         {
-            throw new NotImplementedException();
+            var result = new List<TEntity>();
+            var directoryPath = Path.Combine(_root, address);
+            var dirInfo = new DirectoryInfo(directoryPath);
+            if (Directory.Exists(directoryPath))
+            {
+                var directoryEntityFiles = dirInfo.GetFiles("*.json");
+                foreach (var file in directoryEntityFiles)
+                {
+                    var directoryEntity = JsonConvert.DeserializeObject<TEntity>(File.ReadAllText(file.FullName));
+                    result.Add(directoryEntity);
+                }
+            }
+            return result;
         }
         public TEntity Add(TEntity entity)
         {
             entity.Id = Guid.NewGuid().ToString();
             var directoryPath = Path.Combine(_root, entity.Name);
-            if (!Directory.Exists(directoryPath)) 
+            entity.Address = directoryPath;
+            if (!Directory.Exists(directoryPath))
             {  
                 Directory.CreateDirectory(directoryPath);
-                var configurationFilePath = Path.Combine(directoryPath, $"{entity.Name}_configuration.json");
-                File.WriteAllText(configurationFilePath, entity.ToJson());
             }
+            var configurationFilePath = Path.Combine(directoryPath, $"{entity.Name}_configuration.json");
+            File.WriteAllText(configurationFilePath, entity.ToJson());
             return entity;
         }
 
         public void Remove(TEntity entity)
         {
-            var path = Path.Combine(_root, entity.Name);
-            if (Directory.Exists(path))  
-            {  
-                Directory.Delete(path); 
+            if (Directory.Exists(entity.Address))
+            {
+                // the true parameter here is to make recursive delete for that directory as requested in requirements
+                Directory.Delete(entity.Address, true);
             }  
         }
     }

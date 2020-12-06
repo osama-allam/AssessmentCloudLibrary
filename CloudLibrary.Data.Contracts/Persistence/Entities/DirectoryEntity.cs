@@ -8,5 +8,6 @@ namespace CloudLibrary.Data.Common.Persistence.Entities
     {
         public string Name { get; set; }
         public string Location { get; set; }
+        public string Address { get; set; }
     }
 }
