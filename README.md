@@ -52,7 +52,7 @@ Create a library to create and maintain cloud infrastructure efficiently without
                         "createdBy": "string",
                         "modifiedBy": "string"
                     },
-                    "operationStatus": int, // 0 is Success and 1 is Failed
+                    "operationStatus": 0, // 0 is Success and 1 is Failed
                     "description": "string"
                 }
                 ```
@@ -72,7 +72,7 @@ Create a library to create and maintain cloud infrastructure efficiently without
     * `/api/CloudProvider/delete/{name}` (Delete Cloud Provider)
         * Request body example:
 
-        `curl --location --request DELETE 'http://localhost:13965/api/CloudProvider/delete/IGN'`
+            `curl --location --request DELETE 'http://localhost:13965/api/CloudProvider/delete/IGN'`
         
         * Response:
             * 200	(Success) Returns after successful deletion
@@ -105,7 +105,7 @@ Create a library to create and maintain cloud infrastructure efficiently without
             ```
             
         * Response:
-            * 200 - OK returns created cloud provider
+            * 200 - OK returns created Infrastructure
                 ```json
                 {
                     "infrastructure": {
@@ -136,10 +136,256 @@ Create a library to create and maintain cloud infrastructure efficiently without
     * `/api/Infrastructure/{providerName}/delete/{name}` (Delete Infrastructure)
         * Request body example:
 
-        `curl --location --request DELETE 'http://localhost:13965/api/Infrastructure/IGN/delete/UAT'`
+            `curl --location --request DELETE 'http://localhost:13965/api/Infrastructure/IGN/delete/UAT'`
         
         * Response:
             * 200	(Success) Returns after successful deletion
             * 400 (BadRequest) In case of incorrect request parameters
             * 406 (Not Acceptable) In case of using setting response other than JSON or XML
                
+  ## Resources
+  
+    * #### Virtual Machine
+        
+        * `/api/Resource/{providerName}/{infrastructureName}/VirtualMachine/create` (Create new Virtual Machine)
+            
+            * Request body example:
+            
+                `curl --location --request POST 'http://localhost:13965/api/Resource/IGN/UAT/virtualmachine/create' \
+                --header 'Content-Type: application/json'`
+                
+                ```json
+                {
+                  "Location": "string",
+                  "HardwareProfile": {
+                    "MemorySize": 0
+                  },
+                  "StorageProfile": {
+                    "DiskInfo": "string"
+                  },
+                  "NetworkProfile": {
+                    "PrivateIp": "string",
+                    "PublicIp": "string",
+                    "Dns": "string"
+                  },
+                  "AdditionalConfigurations": {
+                    "additionalProp1": "string",
+                    "additionalProp2": "string",
+                    "additionalProp3": "string"
+                  }
+                }
+                ```
+        * Response:
+            * 200 - OK returns created Virtual Machine
+                ```json
+                {
+                    "resource": {
+                        "additionalConfigurations": {
+                            "additionalProp1": "string",
+                            "additionalProp2": "string",
+                            "additionalProp3": "string"
+                        },
+                        "resourceType": 1, //1 VirtualMachine, 2 DataServer, 3 LoadBalancer ...
+                        "infrastructureId": 0,
+                        "hardwareProfileId": 0,
+                        "storageProfileId": 0,
+                        "networkProfileId": 0,
+                        "infrastructure": {
+                            "cloudProvider": {
+                                "name": "string",
+                                "location": "string",
+                                "address": "string",
+                                "dateCreated": "2020-12-06T22:32:21.2315567+02:00",
+                                "dateModified": "2020-12-06T22:32:21.2315567+02:00",
+                                "createdBy": "string",
+                                "modifiedBy": "string"
+                            },
+                            "name": "UAT",
+                            "location": "string",
+                            "address": "string",
+                            "dateCreated": "2020-12-07T00:18:35.7285125+02:00",
+                            "dateModified": "2020-12-07T00:18:35.7285125+02:00",
+                            "createdBy": "string",
+                            "modifiedBy": "string"
+                        },
+                        "hardwareProfile": {
+                            "memorySize": 100,
+                            "dateCreated": "2020-12-07T13:55:53.5212578+02:00",
+                            "dateModified": "2020-12-07T13:55:53.5212578+02:00",
+                            "createdBy": "string",
+                            "modifiedBy": "string"
+                        },
+                        "storageProfile": {
+                            "diskInfo": "string",
+                            "dateCreated": "2020-12-07T13:55:53.5236228+02:00",
+                            "dateModified": "2020-12-07T13:55:53.5236228+02:00",
+                            "createdBy": "string",
+                            "modifiedBy": "string"
+                        },
+                        "networkProfile": {
+                            "privateIp": "string",
+                            "publicIp": "string",
+                            "dns": "string",
+                            "dateCreated": "2020-12-07T13:55:53.5296384+02:00",
+                            "dateModified": "2020-12-07T13:55:53.5296384+02:00",
+                            "createdBy": "string",
+                            "modifiedBy": "string"
+                        },
+                        "name": "UAT_VirtualMachine",
+                        "location": "string",
+                        "address": "string",
+                        "dateCreated": "2020-12-07T13:55:53.4972399+02:00",
+                        "dateModified": "2020-12-07T13:55:53.4972399+02:00",
+                        "createdBy": "string",
+                        "modifiedBy": "string"
+                    },
+                    "operationStatus": 0,
+                    "description": "string"
+                }
+                ```
+            
+    * `/api/Resource/{providerName}/{infrastructureName}/VirtualMachine/delete` (Delete VirtualMachine)
+        * Request body example:
+
+            `curl --location --request DELETE 'http://localhost:13965/api/Resource/IGN/UAT/VirtualMachine/delete'`
+        
+        * Response:
+            * 200	(Success) Returns after successful deletion
+            * 400 (BadRequest) In case of incorrect request parameters
+            * 406 (Not Acceptable) In case of using setting response other than JSON or XML
+            
+            
+    * #### Data Server
+        
+        * `/api/Resource/{providerName}/{infrastructureName}/DataServer/delete` (Create new Data Server)
+            
+            * Request body example:
+            
+                `curl --location --request POST 'http://localhost:13965/api/Resource/IGN/UAT/DataServer/create' \
+                --header 'Content-Type: application/json'`
+                
+                ```json
+                {
+                  "Location": "Egypt",
+                  "HardwareProfile": {
+                    "MemorySize": 100
+                  },
+                  "StorageProfile": {
+                    "DiskInfo": "100GB"
+                  },
+                  "NetworkProfile": {
+                    "PrivateIp": "192.168.1.1",
+                    "PublicIp": "192.168.1.1",
+                    "Dns": "8:8:8:8"
+                  },
+                  "AdditionalConfigurations": {
+                    "additionalProp1": "string",
+                    "additionalProp2": "string",
+                    "additionalProp3": "string"
+                  },
+                  "DbType": 1,
+                  "Version": "1.1.0"
+                }
+                {
+                  "Location": "string",
+                  "HardwareProfile": {
+                    "MemorySize": 0
+                  },
+                  "StorageProfile": {
+                    "DiskInfo": "string"
+                  },
+                  "NetworkProfile": {
+                    "PrivateIp": "string",
+                    "PublicIp": "string",
+                    "Dns": "string"
+                  },
+                  "AdditionalConfigurations": {
+                    "additionalProp1": "string",
+                    "additionalProp2": "string",
+                    "additionalProp3": "string"
+                  },
+                  "DbType": 1, //1 SQL and 2 MySQL
+                  "Version": "string"
+                }
+                ```
+        * Response:
+            * 200 - OK returns created Virtual Machine
+                ```json
+                {
+                    "dbType": 1, //1 SQL and 2 MySQL
+                    "version": "string",
+                    "resource": {
+                        "additionalConfigurations": {
+                            "additionalProp1": "string",
+                            "additionalProp2": "string",
+                            "additionalProp3": "string"
+                        },
+                        "resourceType": 1,
+                        "infrastructureId": 0,
+                        "hardwareProfileId": 0,
+                        "storageProfileId": 0,
+                        "networkProfileId": 0,
+                        "infrastructure": {
+                            "cloudProvider": {
+                                "name": "string",
+                                "location": "string",
+                                "address": "string",
+                                "dateCreated": "2020-12-06T22:32:21.2315567+02:00",
+                                "dateModified": "2020-12-06T22:32:21.2315567+02:00",
+                                "createdBy": "string",
+                                "modifiedBy": "string"
+                            },
+                            "name": "UAT",
+                            "location": "string",
+                            "address": "string",
+                            "dateCreated": "2020-12-07T00:18:35.7285125+02:00",
+                            "dateModified": "2020-12-07T00:18:35.7285125+02:00",
+                            "createdBy": "string",
+                            "modifiedBy": "string"
+                        },
+                        "hardwareProfile": {
+                            "memorySize": 100,
+                            "dateCreated": "2020-12-07T13:55:53.5212578+02:00",
+                            "dateModified": "2020-12-07T13:55:53.5212578+02:00",
+                            "createdBy": "string",
+                            "modifiedBy": "string"
+                        },
+                        "storageProfile": {
+                            "diskInfo": "string",
+                            "dateCreated": "2020-12-07T13:55:53.5236228+02:00",
+                            "dateModified": "2020-12-07T13:55:53.5236228+02:00",
+                            "createdBy": "string",
+                            "modifiedBy": "string"
+                        },
+                        "networkProfile": {
+                            "privateIp": "string",
+                            "publicIp": "string",
+                            "dns": "string",
+                            "dateCreated": "2020-12-07T13:55:53.5296384+02:00",
+                            "dateModified": "2020-12-07T13:55:53.5296384+02:00",
+                            "createdBy": "string",
+                            "modifiedBy": "string"
+                        },
+                        "name": "UAT_VirtualMachine",
+                        "location": "string",
+                        "address": "string",
+                        "dateCreated": "2020-12-07T13:55:53.4972399+02:00",
+                        "dateModified": "2020-12-07T13:55:53.4972399+02:00",
+                        "createdBy": "string",
+                        "modifiedBy": "string"
+                    },
+                    "operationStatus": 0,
+                    "description": "string"
+                }
+                ```
+            
+    * `/api/Resource/{providerName}/{infrastructureName}/DataServer/delete` (Delete VirtualMachine)
+        * Request body example:
+
+            `curl --location --request DELETE 'http://localhost:13965/api/Resource/IGN/UAT/DataServer/delete'`
+        
+        * Response:
+            * 200	(Success) Returns after successful deletion
+            * 400 (BadRequest) In case of incorrect request parameters
+            * 406 (Not Acceptable) In case of using setting response other than JSON or XML
+            
