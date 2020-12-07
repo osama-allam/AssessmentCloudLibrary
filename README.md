@@ -25,7 +25,7 @@ Create a library to create and maintain cloud infrastructure efficiently without
 # APIs:
 * Supports only `application/json` or `application/xml` responses
   ## Cloud Provider
-    * `/api/CloudProvider/create` (Create new Cloud Provider)
+    * #### Create new Cloud Provider `/api/CloudProvider/create`
             
         * Request body example:
         
@@ -40,15 +40,15 @@ Create a library to create and maintain cloud infrastructure efficiently without
             ```
         
         * Response:
-            * 200 - OK returns created cloud provider
+            * `200 - OK returns created cloud provider`
                 ```json
                 {
                     "cloudProvider": {
                         "name": "string",
                         "location": "string",
                         "address": "string",
-                        "dateCreated": "2020-12-07T13:32:59.7174749+02:00",
-                        "dateModified": "2020-12-07T13:32:59.7174749+02:00",
+                        "dateCreated": "string",
+                        "dateModified": "string",
                         "createdBy": "string",
                         "modifiedBy": "string"
                     },
@@ -56,8 +56,8 @@ Create a library to create and maintain cloud infrastructure efficiently without
                     "description": "string"
                 }
                 ```
-            * 400 (BadRequest) In case of incorrect request parameters
-            * 406 (Not Acceptable) In case of using setting response other than JSON or XML
+            * `400 (BadRequest) In case of incorrect request parameters`
+            * `406 (Not Acceptable) In case of using setting response other than JSON or XML`
                 ```json
                 {
                   "Type": "string",
@@ -69,15 +69,16 @@ Create a library to create and maintain cloud infrastructure efficiently without
                 }
                 ```
                 
-    * `/api/CloudProvider/delete/{name}` (Delete Cloud Provider)
-        * Request body example:
+    * #### Delete new Cloud Provider `/api/CloudProvider/delete/{name}` 
+         
+        * **Request body example:**
 
             `curl --location --request DELETE 'http://localhost:13965/api/CloudProvider/delete/IGN'`
-        
-        * Response:
-            * 200	(Success) Returns after successful deletion
-            * 400 (BadRequest) In case of incorrect request parameters
-            * 406 (Not Acceptable) In case of using setting response other than JSON or XML
+            
+        * **Response:**
+            * `200	(Success) Returns after successful deletion`
+            * `400 (BadRequest) In case of incorrect request parameters`
+            * `406 (Not Acceptable) In case of using setting response other than JSON or XML`
                 ```json
                 {
                   "Type": "string",
@@ -90,9 +91,10 @@ Create a library to create and maintain cloud infrastructure efficiently without
                 ```
                 
   ## Infrastructure
-    * `/api/Infrastructure/{providerName}/create` (Create new Infrastructure)
+  
+    * #### Create new Infrastructure  `/api/Infrastructure/{providerName}/create` 
             
-        * Request body example:
+        * **Request body example**
         
             `curl --location --request POST 'http://localhost:13965/api/Infrastructure/IGN/create' \
                   --header 'Content-Type: application/json' `
@@ -104,8 +106,8 @@ Create a library to create and maintain cloud infrastructure efficiently without
                 }
             ```
             
-        * Response:
-            * 200 - OK returns created Infrastructure
+        * **Response:**
+            * `200 - OK returns created Infrastructure`
                 ```json
                 {
                     "infrastructure": {
@@ -113,16 +115,16 @@ Create a library to create and maintain cloud infrastructure efficiently without
                             "name": "string",
                             "location": "string",
                             "address": "string",
-                            "dateCreated": "2020-12-07T13:32:59.7174749+02:00",
-                            "dateModified": "2020-12-07T13:32:59.7174749+02:00",
+                            "dateCreated": "string",
+                            "dateModified": "string",
                             "createdBy": "string",
                             "modifiedBy": "string"
                         },
                         "name": "string",
                         "location": "string",
                         "address": "string",
-                        "dateCreated": "2020-12-07T13:39:39.6915577+02:00",
-                        "dateModified": "2020-12-07T13:39:39.6915577+02:00",
+                        "dateCreated": "string",
+                        "dateModified": "string",
                         "createdBy": "string",
                         "modifiedBy": "string"
                     },
@@ -133,23 +135,24 @@ Create a library to create and maintain cloud infrastructure efficiently without
             * 400 (BadRequest) In case of incorrect request parameters
             * 406 (Not Acceptable) In case of using setting response other than JSON or XML
              
-    * `/api/Infrastructure/{providerName}/delete/{name}` (Delete Infrastructure)
-        * Request body example:
+    * #### Delete Infrastructure `/api/Infrastructure/{providerName}/delete/{name}`
+        * **Request body example:**
 
             `curl --location --request DELETE 'http://localhost:13965/api/Infrastructure/IGN/delete/UAT'`
         
-        * Response:
-            * 200	(Success) Returns after successful deletion
-            * 400 (BadRequest) In case of incorrect request parameters
-            * 406 (Not Acceptable) In case of using setting response other than JSON or XML
+        * **Response:**
+        
+            * `200	(Success) Returns after successful deletion`
+            * `400 (BadRequest) In case of incorrect request parameters`
+            * `406 (Not Acceptable) In case of using setting response other than JSON or XML`
                
   ## Resources
   
     * #### Virtual Machine
         
-        * `/api/Resource/{providerName}/{infrastructureName}/VirtualMachine/create` (Create new Virtual Machine)
+        * #### Create new Virtual Machine `/api/Resource/{providerName}/{infrastructureName}/VirtualMachine/create`
             
-            * Request body example:
+            * **Request body example:**
             
                 `curl --location --request POST 'http://localhost:13965/api/Resource/IGN/UAT/virtualmachine/create' \
                 --header 'Content-Type: application/json'`
@@ -175,8 +178,8 @@ Create a library to create and maintain cloud infrastructure efficiently without
                   }
                 }
                 ```
-        * Response:
-            * 200 - OK returns created Virtual Machine
+        * **Response:**
+            * `200 - OK returns created Virtual Machine`
                 ```json
                 {
                     "resource": {
@@ -195,30 +198,30 @@ Create a library to create and maintain cloud infrastructure efficiently without
                                 "name": "string",
                                 "location": "string",
                                 "address": "string",
-                                "dateCreated": "2020-12-06T22:32:21.2315567+02:00",
-                                "dateModified": "2020-12-06T22:32:21.2315567+02:00",
+                                "dateCreated": "string",
+                                "dateModified": "string",
                                 "createdBy": "string",
                                 "modifiedBy": "string"
                             },
-                            "name": "UAT",
+                            "name": "string",
                             "location": "string",
                             "address": "string",
-                            "dateCreated": "2020-12-07T00:18:35.7285125+02:00",
-                            "dateModified": "2020-12-07T00:18:35.7285125+02:00",
+                            "dateCreated": "string",
+                            "dateModified": "string",
                             "createdBy": "string",
                             "modifiedBy": "string"
                         },
                         "hardwareProfile": {
-                            "memorySize": 100,
-                            "dateCreated": "2020-12-07T13:55:53.5212578+02:00",
-                            "dateModified": "2020-12-07T13:55:53.5212578+02:00",
+                            "memorySize": 0,
+                            "dateCreated": "string",
+                            "dateModified": "string",
                             "createdBy": "string",
                             "modifiedBy": "string"
                         },
                         "storageProfile": {
                             "diskInfo": "string",
-                            "dateCreated": "2020-12-07T13:55:53.5236228+02:00",
-                            "dateModified": "2020-12-07T13:55:53.5236228+02:00",
+                            "dateCreated": "string",
+                            "dateModified": "string",
                             "createdBy": "string",
                             "modifiedBy": "string"
                         },
@@ -226,16 +229,16 @@ Create a library to create and maintain cloud infrastructure efficiently without
                             "privateIp": "string",
                             "publicIp": "string",
                             "dns": "string",
-                            "dateCreated": "2020-12-07T13:55:53.5296384+02:00",
-                            "dateModified": "2020-12-07T13:55:53.5296384+02:00",
+                            "dateCreated": "string",
+                            "dateModified": "string",
                             "createdBy": "string",
                             "modifiedBy": "string"
                         },
                         "name": "UAT_VirtualMachine",
                         "location": "string",
                         "address": "string",
-                        "dateCreated": "2020-12-07T13:55:53.4972399+02:00",
-                        "dateModified": "2020-12-07T13:55:53.4972399+02:00",
+                        "dateCreated": "string",
+                        "dateModified": "string",
                         "createdBy": "string",
                         "modifiedBy": "string"
                     },
@@ -243,40 +246,43 @@ Create a library to create and maintain cloud infrastructure efficiently without
                     "description": "string"
                 }
                 ```
+                
+            * `400 (BadRequest) In case of incorrect request parameters`
+            * `406 (Not Acceptable) In case of using setting response other than JSON or XML`
             
-    * `/api/Resource/{providerName}/{infrastructureName}/VirtualMachine/delete` (Delete VirtualMachine)
-        * Request body example:
+    * ### Delete VirtualMachine `/api/Resource/{providerName}/{infrastructureName}/VirtualMachine/delete`
+        * **Request body example:**
 
             `curl --location --request DELETE 'http://localhost:13965/api/Resource/IGN/UAT/VirtualMachine/delete'`
         
-        * Response:
-            * 200	(Success) Returns after successful deletion
-            * 400 (BadRequest) In case of incorrect request parameters
-            * 406 (Not Acceptable) In case of using setting response other than JSON or XML
+        * **Response:**
+            * `200	(Success) Returns after successful deletion`
+            * `400 (BadRequest) In case of incorrect request parameters`
+            * `406 (Not Acceptable) In case of using setting response other than JSON or XML`
             
             
     * #### Data Server
         
-        * `/api/Resource/{providerName}/{infrastructureName}/DataServer/delete` (Create new Data Server)
+        * ### Create new Data Server `/api/Resource/{providerName}/{infrastructureName}/DataServer/delete`
             
-            * Request body example:
+            * **Request body example:**
             
                 `curl --location --request POST 'http://localhost:13965/api/Resource/IGN/UAT/DataServer/create' \
                 --header 'Content-Type: application/json'`
                 
                 ```json
                 {
-                  "Location": "Egypt",
+                  "Location": "string",
                   "HardwareProfile": {
-                    "MemorySize": 100
+                    "MemorySize": 0
                   },
                   "StorageProfile": {
-                    "DiskInfo": "100GB"
+                    "DiskInfo": "string"
                   },
                   "NetworkProfile": {
-                    "PrivateIp": "192.168.1.1",
-                    "PublicIp": "192.168.1.1",
-                    "Dns": "8:8:8:8"
+                    "PrivateIp": "string",
+                    "PublicIp": "string",
+                    "Dns": "string"
                   },
                   "AdditionalConfigurations": {
                     "additionalProp1": "string",
@@ -284,7 +290,7 @@ Create a library to create and maintain cloud infrastructure efficiently without
                     "additionalProp3": "string"
                   },
                   "DbType": 1,
-                  "Version": "1.1.0"
+                  "Version": "string"
                 }
                 {
                   "Location": "string",
@@ -308,8 +314,10 @@ Create a library to create and maintain cloud infrastructure efficiently without
                   "Version": "string"
                 }
                 ```
-        * Response:
-            * 200 - OK returns created Virtual Machine
+            
+            
+        * **Response:**
+            * `200 - OK returns created Virtual Machine`
                 ```json
                 {
                     "dbType": 1, //1 SQL and 2 MySQL
@@ -330,30 +338,30 @@ Create a library to create and maintain cloud infrastructure efficiently without
                                 "name": "string",
                                 "location": "string",
                                 "address": "string",
-                                "dateCreated": "2020-12-06T22:32:21.2315567+02:00",
-                                "dateModified": "2020-12-06T22:32:21.2315567+02:00",
+                                "dateCreated": "string",
+                                "dateModified": "string",
                                 "createdBy": "string",
                                 "modifiedBy": "string"
                             },
                             "name": "UAT",
                             "location": "string",
                             "address": "string",
-                            "dateCreated": "2020-12-07T00:18:35.7285125+02:00",
-                            "dateModified": "2020-12-07T00:18:35.7285125+02:00",
+                            "dateCreated": "string",
+                            "dateModified": "string",
                             "createdBy": "string",
                             "modifiedBy": "string"
                         },
                         "hardwareProfile": {
                             "memorySize": 100,
-                            "dateCreated": "2020-12-07T13:55:53.5212578+02:00",
-                            "dateModified": "2020-12-07T13:55:53.5212578+02:00",
+                            "dateCreated": "string",
+                            "dateModified": "string",
                             "createdBy": "string",
                             "modifiedBy": "string"
                         },
                         "storageProfile": {
                             "diskInfo": "string",
-                            "dateCreated": "2020-12-07T13:55:53.5236228+02:00",
-                            "dateModified": "2020-12-07T13:55:53.5236228+02:00",
+                            "dateCreated": "string",
+                            "dateModified": "string",
                             "createdBy": "string",
                             "modifiedBy": "string"
                         },
@@ -361,8 +369,8 @@ Create a library to create and maintain cloud infrastructure efficiently without
                             "privateIp": "string",
                             "publicIp": "string",
                             "dns": "string",
-                            "dateCreated": "2020-12-07T13:55:53.5296384+02:00",
-                            "dateModified": "2020-12-07T13:55:53.5296384+02:00",
+                            "dateCreated": "string",
+                            "dateModified": "string",
                             "createdBy": "string",
                             "modifiedBy": "string"
                         },
@@ -378,14 +386,17 @@ Create a library to create and maintain cloud infrastructure efficiently without
                     "description": "string"
                 }
                 ```
+                
+            * `400 (BadRequest) In case of incorrect request parameters`
+            * `406 (Not Acceptable) In case of using setting response other than JSON or XML`
             
-    * `/api/Resource/{providerName}/{infrastructureName}/DataServer/delete` (Delete VirtualMachine)
-        * Request body example:
+    * ### Delete VirtualMachine `/api/Resource/{providerName}/{infrastructureName}/DataServer/delete`
+        * **Request body example:**
 
             `curl --location --request DELETE 'http://localhost:13965/api/Resource/IGN/UAT/DataServer/delete'`
         
-        * Response:
-            * 200	(Success) Returns after successful deletion
-            * 400 (BadRequest) In case of incorrect request parameters
-            * 406 (Not Acceptable) In case of using setting response other than JSON or XML
+        * **Response:**
+            * `200	(Success) Returns after successful deletion`
+            * `400 (BadRequest) In case of incorrect request parameters`
+            * `406 (Not Acceptable) In case of using setting response other than JSON or XML`
             
