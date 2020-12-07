@@ -21,11 +21,16 @@ Create a library to create and maintain cloud infrastructure efficiently without
     * The delete API should accept the name of an infrastructure and delete all the associated resources
          * The implementation of deleting a resource is to delete the resource file on disk example delete UAT_SERVER.json
          * > **Important:** Do not delete the infrastructure folder. Dependency hierarchy should be followed, i.e. a virtual machine first should be deleted before deleting its hard disks.
+# Getting Started
+
+* You can get started with this project by cloning the solution and run the `CloudLibrary.Frontend` project, this should open the browser on this URL `http://localhost:<port>/index.html` containing **swagger** document page for the below mentioned APIs where you can review/try each API.
 
 # APIs:
 * Supports only `application/json` or `application/xml` responses
   ## Cloud Provider
-    * #### Create new Cloud Provider `/api/CloudProvider/create`
+    * #### Create new Cloud Provider 
+    
+        > `/api/CloudProvider/create`
             
         * Request body example:
         
@@ -69,7 +74,9 @@ Create a library to create and maintain cloud infrastructure efficiently without
                 }
                 ```
                 
-    * #### Delete new Cloud Provider `/api/CloudProvider/delete/{name}` 
+    * #### Delete new Cloud Provider 
+    
+        > `/api/CloudProvider/delete/{name}` 
          
         * **Request body example:**
 
@@ -92,7 +99,9 @@ Create a library to create and maintain cloud infrastructure efficiently without
                 
   ## Infrastructure
   
-    * #### Create new Infrastructure  `/api/Infrastructure/{providerName}/create` 
+    * #### Create new Infrastructure  
+        
+        >`/api/Infrastructure/{providerName}/create` 
             
         * **Request body example**
         
@@ -135,7 +144,10 @@ Create a library to create and maintain cloud infrastructure efficiently without
             * 400 (BadRequest) In case of incorrect request parameters
             * 406 (Not Acceptable) In case of using setting response other than JSON or XML
              
-    * #### Delete Infrastructure `/api/Infrastructure/{providerName}/delete/{name}`
+    * #### Delete Infrastructure 
+        
+        > `/api/Infrastructure/{providerName}/delete/{name}`
+        
         * **Request body example:**
 
             `curl --location --request DELETE 'http://localhost:13965/api/Infrastructure/IGN/delete/UAT'`
@@ -150,7 +162,9 @@ Create a library to create and maintain cloud infrastructure efficiently without
   
     * #### Virtual Machine
         
-        * #### Create new Virtual Machine `/api/Resource/{providerName}/{infrastructureName}/VirtualMachine/create`
+        * #### Create new Virtual Machine 
+        
+            > `/api/Resource/{providerName}/{infrastructureName}/VirtualMachine/create`
             
             * **Request body example:**
             
@@ -250,7 +264,10 @@ Create a library to create and maintain cloud infrastructure efficiently without
             * `400 (BadRequest) In case of incorrect request parameters`
             * `406 (Not Acceptable) In case of using setting response other than JSON or XML`
             
-    * ### Delete VirtualMachine `/api/Resource/{providerName}/{infrastructureName}/VirtualMachine/delete`
+    * ### Delete VirtualMachine 
+    
+        > `/api/Resource/{providerName}/{infrastructureName}/VirtualMachine/delete`
+        
         * **Request body example:**
 
             `curl --location --request DELETE 'http://localhost:13965/api/Resource/IGN/UAT/VirtualMachine/delete'`
@@ -263,7 +280,9 @@ Create a library to create and maintain cloud infrastructure efficiently without
             
     * #### Data Server
         
-        * ### Create new Data Server `/api/Resource/{providerName}/{infrastructureName}/DataServer/delete`
+        * ### Create new Data Server 
+        
+            >`/api/Resource/{providerName}/{infrastructureName}/DataServer/delete`
             
             * **Request body example:**
             
@@ -390,7 +409,10 @@ Create a library to create and maintain cloud infrastructure efficiently without
             * `400 (BadRequest) In case of incorrect request parameters`
             * `406 (Not Acceptable) In case of using setting response other than JSON or XML`
             
-    * ### Delete VirtualMachine `/api/Resource/{providerName}/{infrastructureName}/DataServer/delete`
+    * ### Delete VirtualMachine 
+        
+        > `/api/Resource/{providerName}/{infrastructureName}/DataServer/delete`
+        
         * **Request body example:**
 
             `curl --location --request DELETE 'http://localhost:13965/api/Resource/IGN/UAT/DataServer/delete'`
