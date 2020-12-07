@@ -24,6 +24,8 @@ Create a library to create and maintain cloud infrastructure efficiently without
 # Getting Started
 
 * You can get started with this project by cloning the solution and run the `CloudLibrary.Frontend` project, this should open the browser on this URL `http://localhost:<port>/index.html` containing **swagger** document page for the below mentioned APIs where you can review/try each API.
+    
+    # > Note: Instead of constructing request body for each API I've encluded here <u>Request body example</u> section in each API.
 
 # APIs:
 * Supports only `application/json` or `application/xml` responses
@@ -173,17 +175,17 @@ Create a library to create and maintain cloud infrastructure efficiently without
                 
                 ```json
                 {
-                  "Location": "string",
+                  "Location": "Egypt",
                   "HardwareProfile": {
-                    "MemorySize": 0
+                    "MemorySize": 100
                   },
                   "StorageProfile": {
-                    "DiskInfo": "string"
+                    "DiskInfo": "100GB"
                   },
                   "NetworkProfile": {
-                    "PrivateIp": "string",
-                    "PublicIp": "string",
-                    "Dns": "string"
+                    "PrivateIp": "192.168.1.1",
+                    "PublicIp": "192.168.1.1",
+                    "Dns": "8:8:8:8"
                   },
                   "AdditionalConfigurations": {
                     "additionalProp1": "string",
@@ -291,17 +293,17 @@ Create a library to create and maintain cloud infrastructure efficiently without
                 
                 ```json
                 {
-                  "Location": "string",
+                  "Location": "Egypt",
                   "HardwareProfile": {
-                    "MemorySize": 0
+                    "MemorySize": 100
                   },
                   "StorageProfile": {
-                    "DiskInfo": "string"
+                    "DiskInfo": "100GB"
                   },
                   "NetworkProfile": {
-                    "PrivateIp": "string",
-                    "PublicIp": "string",
-                    "Dns": "string"
+                    "PrivateIp": "192.168.1.1",
+                    "PublicIp": "192.168.1.1",
+                    "Dns": "8:8:8:8"
                   },
                   "AdditionalConfigurations": {
                     "additionalProp1": "string",
@@ -309,28 +311,7 @@ Create a library to create and maintain cloud infrastructure efficiently without
                     "additionalProp3": "string"
                   },
                   "DbType": 1,
-                  "Version": "string"
-                }
-                {
-                  "Location": "string",
-                  "HardwareProfile": {
-                    "MemorySize": 0
-                  },
-                  "StorageProfile": {
-                    "DiskInfo": "string"
-                  },
-                  "NetworkProfile": {
-                    "PrivateIp": "string",
-                    "PublicIp": "string",
-                    "Dns": "string"
-                  },
-                  "AdditionalConfigurations": {
-                    "additionalProp1": "string",
-                    "additionalProp2": "string",
-                    "additionalProp3": "string"
-                  },
-                  "DbType": 1, //1 SQL and 2 MySQL
-                  "Version": "string"
+                  "Version": "1.1.0"
                 }
                 ```
             
