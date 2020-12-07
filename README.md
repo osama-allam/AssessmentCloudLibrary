@@ -25,7 +25,7 @@ Create a library to create and maintain cloud infrastructure efficiently without
 
 * You can get started with this project by cloning the solution and run the `CloudLibrary.Frontend` project, this should open the browser on this URL `http://localhost:<port>/index.html` containing **swagger** document page for the below mentioned APIs where you can review/try each API.
     
-    ### > Note: Instead of constructing request body for each API I've encluded here <u>Request body example</u> section in each API.
+    > ### Note: Instead of constructing request body for each API I've encluded here <u>Request body example</u> section in each API.
 
 # APIs:
 * Supports only `application/json` or `application/xml` responses
