@@ -44,5 +44,15 @@
             <response code="406">(Not Acceptable) In case of using setting response other than JSON or XML</response>
             <returns></returns>
         </member>
+        <member name="M:CloudLibrary.Frontend.Controllers.ResourceController.Create(CloudLibrary.Core.Services.Requests.CreateVmResourceRequest)">
+            <summary>
+            Create new virtual machine resource
+            </summary>
+            <param name="request"></param>
+            <response code="200">(Success) Returns a the created Resource json</response>
+            <response code="400">(BadRequest) In case of incorrect request parameters</response>
+            <response code="406">(Not Acceptable) In case of using setting response other than JSON or XML</response>
+            <returns></returns>
+        </member>
     </members>
 </doc>

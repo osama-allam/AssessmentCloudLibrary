@@ -4,7 +4,7 @@
     {
         Undefined,
         VirtualMachine,
-        Database,
+        DataServer,
         LoadBalancer,
         FileStorage
     }

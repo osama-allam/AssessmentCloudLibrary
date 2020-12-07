@@ -35,7 +35,7 @@ namespace CloudLibrary.Frontend.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CloudProvider))]
         [Route("create")]
         [HttpPost]
-        public IActionResult Create(CreateCloudProviderRequest request)
+        public IActionResult Create([FromBody]CreateCloudProviderRequest request)
         {
             if (ModelState.IsValid)
             {

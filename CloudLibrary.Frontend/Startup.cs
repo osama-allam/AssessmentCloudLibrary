@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
+using AutoMapper;
 using CloudLibrary.Core.Services.Contracts;
+using CloudLibrary.Core.Services.Model;
 using CloudLibrary.Core.Services.Persistence;
+using CloudLibrary.Core.Services.Requests;
 using CloudLibrary.Data.Common.Contracts;
 using CloudLibrary.Data.Common.Persistence;
+using CloudLibrary.Data.Common.Persistence.Entities;
+using CloudLibrary.Data.Core.Entities;
 using CloudLibrary.Data.Core.Repositories.Contracts;
 using CloudLibrary.Data.Core.Repositories.Persistence;
 using Microsoft.AspNetCore.Builder;
@@ -54,7 +58,8 @@ namespace CloudLibrary.Frontend
             {
                 options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             });
-            
+            // Auto Mapper Configurations
+            AutoMapperProfile.Initialize();
             services.AddScoped<IUnitOfWorkBase>(x => new UnitOfWorkBase(BaseDirectory.GetProvidersPath()));
             services.AddScoped<IResourcesUnitOfWork>(x => new ResourcesUnitOfWork(BaseDirectory.GetProvidersPath()));
             services.AddScoped<ICloudProviderService, CloudProviderService>();

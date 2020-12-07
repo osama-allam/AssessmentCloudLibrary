@@ -10,10 +10,10 @@ namespace CloudLibrary.Data.Common.Persistence.Entities
             CreatedBy = ModifiedBy = "System";
             DateCreated = DateModified = DateTime.Now;
         }
-        public virtual DateTime DateCreated { get; set; }
-        public virtual DateTime DateModified { get; set; }
-        public virtual string CreatedBy { get; set; }
-        public virtual string ModifiedBy { get; set; }
+        public DateTime DateCreated { get; set; }
+        public DateTime DateModified { get; set; }
+        public string CreatedBy { get; set; }
+        public string ModifiedBy { get; set; }
 
     }
 }

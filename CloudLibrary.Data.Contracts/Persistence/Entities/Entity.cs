@@ -6,7 +6,8 @@ namespace CloudLibrary.Data.Common.Persistence.Entities
 {
     public class Entity<T>
     {
-        public virtual T Id { get; set; }
+        [JsonIgnore]
+        public T Id { get; set; }
 
         public string ToJson()
         {
