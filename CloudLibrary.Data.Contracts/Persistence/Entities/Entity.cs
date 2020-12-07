@@ -11,7 +11,11 @@ namespace CloudLibrary.Data.Common.Persistence.Entities
 
         public string ToJson()
         {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() } );
+            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                Formatting = Formatting.Indented
+            } );
         }
     }
 

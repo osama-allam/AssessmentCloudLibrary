@@ -5,7 +5,7 @@ namespace CloudLibrary.Data.Common.Contracts.Entities
 {
     public interface IResource<T> : IDirectoryEntity<T> where T : class
     {
-        ResourceType Type { get; }
+        ResourceType Type { get; set; }
         int InfrastructureId { get; set; }
         int HardwareProfileId { get; set; }
         int StorageProfileId { get; set; }

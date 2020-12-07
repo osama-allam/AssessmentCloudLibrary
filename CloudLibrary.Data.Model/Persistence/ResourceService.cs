@@ -47,13 +47,22 @@ namespace CloudLibrary.Core.Services.Persistence
             return response;
         }
 
-        public void DeleteResource(string providerName, string infrastructureName, string name)
+        public void DeleteVmResource(string providerName, string infrastructureName, ResourceType resourceType)
         {
-            var address = Path.Combine(providerName, name);
-            var infrastructure = _resourcesUnitOfWork.Resources.Get(address);
-            if(infrastructure != null)
+            var address = Path.Combine(providerName, infrastructureName, ResourceType.VirtualMachine.ToString());
+            var virtualMachine = _resourcesUnitOfWork.VirtualMachines.Get(address);
+            if(virtualMachine != null)
             {
-                _resourcesUnitOfWork.Resources.Remove(infrastructure);
+                _resourcesUnitOfWork.Resources.Remove(virtualMachine);
+            }
+        }
+        public void DeleteDataServerResource(string providerName, string infrastructureName, ResourceType resourceType)
+        {
+            var address = Path.Combine(providerName, infrastructureName, ResourceType.DataServer.ToString());
+            var databaseServer = _resourcesUnitOfWork.DatabaseServers.Get(address);
+            if(databaseServer != null)
+            {
+                _resourcesUnitOfWork.Resources.Remove(databaseServer);
             }
         }
     }

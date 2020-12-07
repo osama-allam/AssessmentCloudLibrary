@@ -6,7 +6,7 @@ namespace CloudLibrary.Data.Common.Persistence.Entities
 {
     public class Resource<T> : DirectoryEntity<T>, IResource<T> where T : class
     {
-        public virtual ResourceType Type => ResourceType.Undefined;
+        public ResourceType Type { get; set; }
         public int InfrastructureId { get; set; }
         public int HardwareProfileId { get; set; }
         public int StorageProfileId { get; set; }

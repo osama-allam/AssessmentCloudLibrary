@@ -1,0 +1,62 @@
+{
+  "type": 2,
+  "dbType": 1,
+  "version": "1.1.0",
+  "additionalConfigurations": {
+    "additionalProp1": "string",
+    "additionalProp2": "string",
+    "additionalProp3": "string"
+  },
+  "infrastructureId": 0,
+  "hardwareProfileId": 0,
+  "storageProfileId": 0,
+  "networkProfileId": 0,
+  "infrastructure": {
+    "cloudProvider": {
+      "name": "IGN",
+      "location": "Egypt",
+      "address": "IGN",
+      "dateCreated": "2020-12-06T22:32:21.2315567+02:00",
+      "dateModified": "2020-12-06T22:32:21.2315567+02:00",
+      "createdBy": "System",
+      "modifiedBy": "System"
+    },
+    "name": "UAT",
+    "location": "Egypt",
+    "address": "IGN\\UAT",
+    "dateCreated": "2020-12-07T00:18:35.7285125+02:00",
+    "dateModified": "2020-12-07T00:18:35.7285125+02:00",
+    "createdBy": "System",
+    "modifiedBy": "System"
+  },
+  "hardwareProfile": {
+    "memorySize": 100,
+    "dateCreated": "2020-12-07T02:33:02.399488+02:00",
+    "dateModified": "2020-12-07T02:33:02.399488+02:00",
+    "createdBy": "System",
+    "modifiedBy": "System"
+  },
+  "storageProfile": {
+    "diskInfo": "100GB",
+    "dateCreated": "2020-12-07T02:33:02.4062526+02:00",
+    "dateModified": "2020-12-07T02:33:02.4062526+02:00",
+    "createdBy": "System",
+    "modifiedBy": "System"
+  },
+  "networkProfile": {
+    "privateIp": "192.168.1.1",
+    "publicIp": "192.168.1.1",
+    "dns": "8:8:8:8",
+    "dateCreated": "2020-12-07T02:33:02.4180422+02:00",
+    "dateModified": "2020-12-07T02:33:02.4180422+02:00",
+    "createdBy": "System",
+    "modifiedBy": "System"
+  },
+  "name": "UAT_DataServer",
+  "location": "Egypt",
+  "address": "IGN\\UAT\\DataServer",
+  "dateCreated": "2020-12-07T02:33:02.3683077+02:00",
+  "dateModified": "2020-12-07T02:33:02.3683077+02:00",
+  "createdBy": "System",
+  "modifiedBy": "System"
+}

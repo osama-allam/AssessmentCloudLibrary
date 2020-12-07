@@ -10,6 +10,7 @@ namespace CloudLibrary.Core.Services.Contracts
     public interface IResourceService : IService
     {
         CreateResourceResponse<IResource<string>> CreateResource(string providerName, string infrastructureName, ResourceType resourceType, IResource<string> resource);
-        void DeleteResource(string providerName, string infrastructureName, string name);
+        void DeleteVmResource(string providerName, string infrastructureName, ResourceType resourceType);
+        void DeleteDataServerResource(string providerName, string infrastructureName, ResourceType resourceType);
     }
 }

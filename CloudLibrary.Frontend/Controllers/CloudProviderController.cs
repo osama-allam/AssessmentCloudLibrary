@@ -54,7 +54,7 @@ namespace CloudLibrary.Frontend.Controllers
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status406NotAcceptable)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CloudProvider))]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [Route("delete/{name}")]
         [HttpDelete]
         public IActionResult Delete(string name)
