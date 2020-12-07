@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CloudLibrary.Core.Services.Contracts;
 using CloudLibrary.Core.Services.Requests;
+using CloudLibrary.Core.Services.Responses;
 using CloudLibrary.Data.Common.Persistence.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -32,7 +33,7 @@ namespace CloudLibrary.Frontend.Controllers
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status406NotAcceptable)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CloudProvider))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CreateCloudProviderResponse))]
         [Route("create")]
         [HttpPost]
         public IActionResult Create([FromBody]CreateCloudProviderRequest request)

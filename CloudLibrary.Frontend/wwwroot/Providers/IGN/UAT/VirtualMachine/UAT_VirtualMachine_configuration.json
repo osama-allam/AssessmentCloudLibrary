@@ -1,12 +1,10 @@
 {
-  "dbType": 1,
-  "version": "1.1.0",
   "additionalConfigurations": {
     "additionalProp1": "string",
     "additionalProp2": "string",
     "additionalProp3": "string"
   },
-  "resourceType": 2,
+  "resourceType": 1,
   "infrastructureId": 0,
   "hardwareProfileId": 0,
   "storageProfileId": 0,
@@ -31,15 +29,15 @@
   },
   "hardwareProfile": {
     "memorySize": 100,
-    "dateCreated": "2020-12-07T14:05:07.2002255+02:00",
-    "dateModified": "2020-12-07T14:05:07.2002255+02:00",
+    "dateCreated": "2020-12-07T14:05:01.5799379+02:00",
+    "dateModified": "2020-12-07T14:05:01.5799379+02:00",
     "createdBy": "System",
     "modifiedBy": "System"
   },
   "storageProfile": {
     "diskInfo": "100GB",
-    "dateCreated": "2020-12-07T14:05:07.2002312+02:00",
-    "dateModified": "2020-12-07T14:05:07.2002312+02:00",
+    "dateCreated": "2020-12-07T14:05:01.5799717+02:00",
+    "dateModified": "2020-12-07T14:05:01.5799717+02:00",
     "createdBy": "System",
     "modifiedBy": "System"
   },
@@ -47,16 +45,16 @@
     "privateIp": "192.168.1.1",
     "publicIp": "192.168.1.1",
     "dns": "8:8:8:8",
-    "dateCreated": "2020-12-07T14:05:07.2002382+02:00",
-    "dateModified": "2020-12-07T14:05:07.2002382+02:00",
+    "dateCreated": "2020-12-07T14:05:01.5799746+02:00",
+    "dateModified": "2020-12-07T14:05:01.5799746+02:00",
     "createdBy": "System",
     "modifiedBy": "System"
   },
-  "name": "UAT_DataServer",
+  "name": "UAT_VirtualMachine",
   "location": "Egypt",
-  "address": "IGN\\UAT\\DataServer",
-  "dateCreated": "2020-12-07T14:05:07.200203+02:00",
-  "dateModified": "2020-12-07T14:05:07.200203+02:00",
+  "address": "IGN\\UAT\\VirtualMachine",
+  "dateCreated": "2020-12-07T14:05:01.5791943+02:00",
+  "dateModified": "2020-12-07T14:05:01.5791943+02:00",
   "createdBy": "System",
   "modifiedBy": "System"
 }

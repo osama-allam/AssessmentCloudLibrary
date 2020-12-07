@@ -1,0 +1,18 @@
+{
+  "cloudProvider": {
+    "name": "IGN2",
+    "location": "Egypt",
+    "address": "IGN2",
+    "dateCreated": "2020-12-07T13:32:59.7174749+02:00",
+    "dateModified": "2020-12-07T13:32:59.7174749+02:00",
+    "createdBy": "System",
+    "modifiedBy": "System"
+  },
+  "name": "UAT",
+  "location": "Egypt",
+  "address": "IGN2\\UAT",
+  "dateCreated": "2020-12-07T13:39:39.6915577+02:00",
+  "dateModified": "2020-12-07T13:39:39.6915577+02:00",
+  "createdBy": "System",
+  "modifiedBy": "System"
+}

@@ -8,7 +8,7 @@ namespace CloudLibrary.Data.Core.Entities
     {
         public DatabaseServer()
         {
-            Type = ResourceType.DataServer;
+            ResourceType = ResourceType.DataServer;
         }
         public DbType DbType { get; set; }
         public string Version { get; set; }

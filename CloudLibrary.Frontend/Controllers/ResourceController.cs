@@ -29,7 +29,7 @@ namespace CloudLibrary.Frontend.Controllers
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status406NotAcceptable)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(VirtualMachine))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CreateResourceResponse<VirtualMachine>))]
         [Route("VirtualMachine/create")]
         [HttpPost]
         public IActionResult Create([FromBody] CreateVmResourceRequest request)
@@ -50,7 +50,7 @@ namespace CloudLibrary.Frontend.Controllers
                 var response = _resourceService.CreateResource(providerName, infrastructureName,ResourceType.VirtualMachine, virtualMachine);
                 if (response.OperationStatus == OperationStatus.Success)
                 {
-                    return Ok(response.Resource);
+                    return Ok(response);
                 }
                 return BadRequest(response);
             }
@@ -66,7 +66,7 @@ namespace CloudLibrary.Frontend.Controllers
         /// <returns></returns>
         [ProducesResponseType(StatusCodes.Status406NotAcceptable)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(DatabaseServer))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CreateResourceResponse<DatabaseServer>))]
         [Route("DataServer/create")]
         [HttpPost]
         public IActionResult Create([FromBody] CreateDataServerResourceRequest request)
@@ -89,7 +89,7 @@ namespace CloudLibrary.Frontend.Controllers
                 var response = _resourceService.CreateResource(providerName, infrastructureName,ResourceType.DataServer, databaseServer);
                 if (response.OperationStatus == OperationStatus.Success)
                 {
-                    return Ok(response.Resource);
+                    return Ok(response);
                 }
                 return BadRequest(response);
             }

@@ -8,7 +8,7 @@ namespace CloudLibrary.Data.Core.Entities
     {
         public VirtualMachine()
         {
-            Type = ResourceType.VirtualMachine;
+            ResourceType = ResourceType.VirtualMachine;
         }
         public Dictionary<string, string> AdditionalConfigurations { get; set; }
     }

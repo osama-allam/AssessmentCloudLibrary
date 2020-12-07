@@ -44,7 +44,7 @@ namespace CloudLibrary.Frontend.Controllers
                 var response = _infrastructureService.CreateInfrastructure(providerName, request);
                 if (response.OperationStatus == OperationStatus.Success)
                 {
-                    return Ok(response.Infrastructure);
+                    return Ok(response);
                 }
                 return BadRequest(response);
             }
